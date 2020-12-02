@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  div.card
+    div.card-body
+      h1.card-title= article.title
+      h5 Written by #{author}
+      p.card-text= article.description
+      p.card-text= article.price
+      if user
+        if user.id == article.author
+          a.btn.btn-outline-primary.ml-1.mr-1(href='/articles/edit/'+article._id) Edit
+        if user.admin == "yes"
+          a.btn.btn-outline-danger.delete-article(href="#", data-id=article._id) Delete

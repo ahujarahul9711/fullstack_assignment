@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 #{title}
+  ul.list-group
+    each article, i in articles
+      li.list-group-item
+        div.d-flex.flex-row.bd-highlight
+          a(href="/articles/"+article._id)= article.title
+          span.ml-auto= article.price

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  div.card
+    div.card-body
+      h1 Login
+      form(method='POST', action='/users/login')
+          #from-group
+            label Username:
+            input.form-control(name='username', type='text' )
+          #from-group
+            label Password:
+            input.form-control(name='password', type='password' )
+          
+          br
+          input.btn.btn-primary(type='submit', value='Submit' )

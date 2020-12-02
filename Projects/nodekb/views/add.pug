@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 #{title}
+  form(method='POST', action='/articles/add')
+      #from-group
+        label Title:
+        input.form-control(name='title', type='text' required)
+      #from-group
+        label Description:
+        textarea.form-control(name='description')
+      #from-group
+        label Price:
+        input.form-control(name='price', type='text' required)
+      br
+      input.btn.btn-primary(type='submit', value='Submit' required)
